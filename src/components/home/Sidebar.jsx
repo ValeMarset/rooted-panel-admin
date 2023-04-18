@@ -35,16 +35,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className={` ${styles.sideBar} ${styles.grid} sticky-top `}>
-      <Link to="/" className="text-decoration-none ">
-        <div className={` ${styles.logoDiv} ${styles.flex} `}>
-          <img src="img/logoEquipo.png" alt="logo" />
-          <h2 id="rooted" className={`${styles.textLogo} mt-3`}>
-            Rooted
-          </h2>
-        </div>
-      </Link>
-
+    <div className={` ${styles.sideBar} ${styles.grid} sticky-top bg-light`}>
       <div className={` ${styles.menuDiv}`}>
         <h3 className={`${styles.divTitle}`}>QUICK MENU</h3>
         <ul

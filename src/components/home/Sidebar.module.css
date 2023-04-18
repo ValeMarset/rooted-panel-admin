@@ -43,24 +43,12 @@
 
 .sideBar {
   background: var(--whiteColor);
-  box-shadow: 1px 0px 4px var(--grayText);
-  width: 18%;
+  width: 15%;
   height: 100vh;
   gap: 3rem;
   overflow: auto;
 }
-.sideBar .logoDiv {
-  padding: 1.5rem 1.5rem 0;
-  cursor: pointer;
-}
-.sideBar .logoDiv img {
-  max-width: 40px;
-  margin-right: 0.2rem;
-}
-.sideBar .logoDiv h2 {
-  font-size: var(--h2FontSize);
-  color: var(--primaryColor);
-}
+
 .sideBar .menuDiv .divTitle,
 .sideBar .settingsDiv .divTitle {
   font-size: var(--h3FontSize);
@@ -179,20 +167,6 @@
   }
 }
 @media screen and (max-width: 745px) {
-  .sideBar .logoDiv {
-    text-align: center;
-    margin: auto;
-    padding: 1.5rem 0.5rem 0;
-  }
-  .sideBar .logoDiv img {
-    max-width: 70px;
-    margin: 0;
-    border-radius: 10px;
-    padding: 0.5rem;
-  }
-  .sideBar .logoDiv h2 {
-    display: none;
-  }
   .sideBar .menuDiv .divTitle,
   .sideBar .menuDiv .smallText,
   .sideBar .settingsDiv .divTitle,

@@ -1,0 +1,26 @@
+.bgColorAdmin {
+  background-color: rgb(201, 213, 201);
+}
+.textSize {
+  text-align: center;
+}
+@media (max-width: 767.98px) {
+  .containerRegister {
+    width: 500px;
+  }
+}
+.imgPosition {
+  bottom: 6em;
+  width: 60%;
+}
+.imageSize {
+  width: 5rem;
+  height: 5rem;
+}
+
+.imgProfileAdmin {
+  width: 7rem;
+  height: 7rem;
+  margin-bottom: 2px;
+  margin-right: 0.75rem;
+}

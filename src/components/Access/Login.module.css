@@ -1,0 +1,57 @@
+.sizelogin {
+  width: 28rem;
+  padding: 2rem;
+  max-height: fit-content;
+}
+
+.contenedorLogin {
+  background-color: hsl(94, 59%, 35%);
+  border-color: white solid 1px;
+  color: white;
+  position: absolute;
+  top: 10rem;
+  border-radius: 2%;
+}
+.login {
+  border: #71846f solid 1px;
+  color: black;
+}
+.primaryButton {
+  text-decoration: none;
+  margin-top: 1em;
+  padding: 0.3em;
+  border: 2px solid #71846f;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  font-size: 18px;
+  z-index: 1;
+  font-family: inherit;
+  color: #d8e6d6aa;
+  transition: all 0.3s ease;
+}
+.primarybutton ::before {
+  content: "";
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: --navBarColor;
+  display: block;
+  z-index: -1;
+}
+.primaryButton:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--mainColorPage);
+  z-index: -1;
+}
+.primaryButton:hover {
+  color: white;
+}
