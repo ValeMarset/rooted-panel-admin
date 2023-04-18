@@ -65,7 +65,9 @@ function AdminProfile() {
     admin && (
       <>
         {" "}
-        <div className={`d-flex align-items-center text-white ps-5 py-3 ${styles.bgColorAdmin} w-100`}>
+        <div
+          className={`d-flex align-items-center text-white ps-5 py-3 ${styles.bgColorAdmin} w-100`}
+        >
           <div className="w-75 pt-5">
             {/* <h2 className="mt-3 titleDashboard">Profile</h2> */}
             <div>
@@ -76,7 +78,10 @@ function AdminProfile() {
                 </div>
                 <div className="col-6">
                   {" "}
-                  <img className={`rounded-circle object-fit-cover ms-2 position-relative ${styles.imgProfileAdmin}`} src={`${process.env.REACT_APP_IMAGES_URL}/${admin.admin.avatar}`} />
+                  <img
+                    className={`rounded-circle object-fit-cover ms-2 position-relative ${styles.imgProfileAdmin}`}
+                    src={`${process.env.REACT_APP_IMAGES_URL}/${admin.admin.avatar}`}
+                  />
                 </div>
               </div>
 
@@ -87,7 +92,16 @@ function AdminProfile() {
                       <Form.Label className="me-5">First Name</Form.Label>
                     </div>
                     <div className="col-6">
-                      <Form.Control type="text" placeholder="First Name" name="firstname" id="firstname" className="me-3 rounded-0 " required onChange={(e) => setFirstname(e.target.value)} value={firstname} />
+                      <Form.Control
+                        type="text"
+                        placeholder="First Name"
+                        name="firstname"
+                        id="firstname"
+                        className="me-3 rounded-0 "
+                        required
+                        onChange={(e) => setFirstname(e.target.value)}
+                        value={firstname}
+                      />
                     </div>
                   </div>
                 </Form.Group>
@@ -99,7 +113,16 @@ function AdminProfile() {
                     </div>
                     <div className="col-6">
                       {" "}
-                      <Form.Control type="text" placeholder="Last Name" name="lastname" id="lastname" className="me-3 rounded-0" required onChange={(e) => setLastname(e.target.value)} value={lastname} />
+                      <Form.Control
+                        type="text"
+                        placeholder="Last Name"
+                        name="lastname"
+                        id="lastname"
+                        className="me-3 rounded-0"
+                        required
+                        onChange={(e) => setLastname(e.target.value)}
+                        value={lastname}
+                      />
                     </div>
                   </div>
                 </Form.Group>
@@ -112,7 +135,16 @@ function AdminProfile() {
                     </div>
                     <div className="col-6">
                       {" "}
-                      <Form.Control type="text" placeholder="Address" name="address" id="address" required onChange={(e) => setAddress(e.target.value)} value={address} className="rounded-0" />
+                      <Form.Control
+                        type="text"
+                        placeholder="Address"
+                        name="address"
+                        id="address"
+                        required
+                        onChange={(e) => setAddress(e.target.value)}
+                        value={address}
+                        className="rounded-0"
+                      />
                     </div>
                   </div>
                 </Form.Group>
@@ -123,7 +155,16 @@ function AdminProfile() {
                       <Form.Label>Phone</Form.Label>
                     </div>
                     <div className="col-6">
-                      <Form.Control type="text" placeholder="Your Phone" name="phone" id="phone" className="rounded-0" required onChange={(e) => setPhone(e.target.value)} value={phone} />
+                      <Form.Control
+                        type="text"
+                        placeholder="Your Phone"
+                        name="phone"
+                        id="phone"
+                        className="rounded-0"
+                        required
+                        onChange={(e) => setPhone(e.target.value)}
+                        value={phone}
+                      />
                     </div>
                   </div>
                 </Form.Group>
@@ -135,7 +176,16 @@ function AdminProfile() {
                     </div>
                     <div className="col-6">
                       {" "}
-                      <Form.Control type="email" placeholder="Enter email" name="email" id="emailRegister" className="me-3 rounded-0" required onChange={(e) => setEmail(e.target.value)} value={email} />
+                      <Form.Control
+                        type="email"
+                        placeholder="Enter email"
+                        name="email"
+                        id="emailRegister"
+                        className="me-3 rounded-0"
+                        required
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
+                      />
                     </div>
                   </div>
                 </Form.Group>
@@ -148,13 +198,22 @@ function AdminProfile() {
                     </div>
                     <div className="col-6">
                       {" "}
-                      <Form.Control type="file" name="image" id="image" onChange={(e) => setImage(e.target.files[0])} className="rounded-0" />
+                      <Form.Control
+                        type="file"
+                        name="image"
+                        id="image"
+                        onChange={(e) => setImage(e.target.files[0])}
+                        className="rounded-0"
+                      />
                     </div>
                   </div>
                 </Form.Group>
 
                 <div className="d-flex justify-content-end">
-                  <Button className="rounded-0 secondaryButton mt-4 mb-4 pe-5 ps-5 me-3" type="submit">
+                  <Button
+                    className="rounded-0 secondaryButton mt-4 mb-4 pe-5 ps-5 me-3"
+                    type="submit"
+                  >
                     Save changes
                   </Button>
                 </div>

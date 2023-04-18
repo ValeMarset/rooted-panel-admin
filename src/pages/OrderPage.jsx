@@ -5,9 +5,9 @@ import Order from "../components/Order/Order";
 export default function OrderPage() {
   return (
     <>
-      <div>
+      <NavbarPanel />
+      <div className="d-flex">
         <Sidebar />
-        <NavbarPanel />
         <Order />
       </div>
     </>

@@ -15,6 +15,7 @@ import CreateCategory from "./components/Categories/CreateCategory";
 import UpdateCategory from "./components/Categories/UpdateCategory";
 import CreateAdmin from "./components/Admins/CreateAdmin";
 import AdminProfilePage from "./pages/AdminProfilePage";
+import Loader from "./components/Loader";
 
 export default function App() {
   const admin = useSelector((state) => state.admin);
