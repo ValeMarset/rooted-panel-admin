@@ -5,9 +5,9 @@
 }
 
 .contenedorLogin {
-  background-color: hsl(94, 59%, 35%);
+  background-color: rgb(201, 213, 201);
   border-color: white solid 1px;
-  color: white;
+  color: rgb(117, 117, 117);
   position: absolute;
   top: 10rem;
   border-radius: 2%;

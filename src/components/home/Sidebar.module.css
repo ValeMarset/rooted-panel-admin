@@ -1,6 +1,6 @@
 :root {
-  --primaryColor: hsl(94, 59%, 35%);
-  --hoverColor: #bdf094;
+  --primaryColor: rgb(130, 156, 130);
+  --hoverColor: #b1ce9b;
   --paleGreen: hsl(96, 75%, 89%);
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(0, 0%, 18%);
@@ -115,7 +115,7 @@
 .sideBar .sidebarCard .cardContent {
   position: relative;
   padding: 1rem;
-  background: var(--hoverColor);
+  background: rgb(201, 213, 201);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -136,26 +136,6 @@
   position: relative;
   color: var(--textColor);
   z-index: 1000;
-}
-.sideBar .sidebarCard .cardContent .circle1,
-.sideBar .sidebarCard .cardContent .circle2 {
-  position: absolute;
-  background: var(--paleGreen);
-  border-radius: 50%;
-  opacity: 0.7;
-}
-.sideBar .sidebarCard .cardContent .circle1 {
-  height: 100px;
-  width: 100px;
-  top: -50px;
-  left: -50px;
-}
-.sideBar .sidebarCard .cardContent .circle2 {
-  height: 150px;
-  width: 150px;
-  bottom: -80px;
-  right: -70px;
-  z-index: 1;
 }
 
 @media screen and (max-width: 820px) {

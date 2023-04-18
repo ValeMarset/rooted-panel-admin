@@ -3,7 +3,7 @@ import styles from "./Sidebar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-// import { logout } from "../../redux/adminReducer";
+import { logout } from "../../redux/adminReducer";
 import toast from "react-hot-toast";
 
 //Imported logos
@@ -24,7 +24,7 @@ export default function Sidebar() {
 
   const handleLogout = (e) => {
     e.preventDefault();
-    // dispatch(logout());
+    dispatch(logout());
     toast.success("See you soon!");
 
     navigate("/");
@@ -85,7 +85,7 @@ export default function Sidebar() {
         >
           <li className={`${styles.listItem}`}>
             <Link
-              to="/"
+              to="/login"
               className={` ${styles.menuLink} ${styles.flex}`}
               onClick={handleLogout}
             >
@@ -108,9 +108,6 @@ export default function Sidebar() {
       <div className={` ${styles.sidebarCard}`}>
         <BsQuestionCircle className={` ${styles.icon}`} />
         <div className={` ${styles.cardContent}`}>
-          <div className={`${styles.circle1}`}></div>
-          <div className={`${styles.circle2}`}></div>
-
           <h3>Help Center</h3>
           <p>Having trouble? Please contact us for any questions.</p>
           <button className={` ${styles.btn}`}>Go to help center</button>

@@ -78,7 +78,7 @@ export default function CrudCategories() {
         {loading ? (
           <Loader />
         ) : (
-          <Table className={` ${styles.table} lh-lg`}>
+          <Table className={` ${styles.table} lh-lg table-responsive`}>
             <thead>
               <tr>
                 <th>Id</th>

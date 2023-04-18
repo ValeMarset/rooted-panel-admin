@@ -48,7 +48,7 @@ export default function Login() {
                 <Form.Control
                   required
                   type="text"
-                  className="rounded-0"
+                  className="rounded-0 py-2"
                   id="emailLogin"
                   name="email"
                   placeholder="Email"
@@ -62,7 +62,7 @@ export default function Login() {
                 <Form.Control
                   required
                   type="password"
-                  className="rounded-0"
+                  className="rounded-0 py-2"
                   id="passwordLogin"
                   name="password"
                   placeholder="Password"
@@ -71,7 +71,7 @@ export default function Login() {
                 />
               </Form.Group>
               <div className={`d-grid  mt-4${styles.Login}`}>
-                <button className="primaryButton" type="submit">
+                <button className="secondaryButton" type="submit">
                   Login
                 </button>
               </div>
