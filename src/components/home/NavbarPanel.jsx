@@ -18,7 +18,9 @@ function NavbarPanel() {
   };
 
   return (
-    <Navbar bg="light" className="fixed-top d-flex justify-content-between ">
+    <Navbar
+      className={`fixed-top d-flex justify-content-between ${styles.bgNavbar} `}
+    >
       <Link to="/" className="text-decoration-none ">
         <div className={` ${styles.logoDiv} ${styles.flex} ms-3`}>
           <img src={logoRooted} alt="logo" />

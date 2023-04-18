@@ -36,7 +36,7 @@ export default function Sidebar() {
 
   return (
     <div
-      className={` ${styles.sideBar} ${styles.grid} fixed-bottom bg-light z-2 pt-5`}
+      className={` ${styles.sideBar} ${styles.grid} ${styles.bgSidebar} fixed-bottom  z-2 pt-5`}
     >
       <div className={` ${styles.menuDiv}`}>
         <h3 className={`${styles.divTitle} pt-5`}>QUICK MENU</h3>
@@ -104,14 +104,6 @@ export default function Sidebar() {
             </Link>
           </li>
         </ul>
-      </div>
-      <div className={` ${styles.sidebarCard}`}>
-        <BsQuestionCircle className={` ${styles.icon}`} />
-        <div className={` ${styles.cardContent}`}>
-          <h3>Help Center</h3>
-          <p>Having trouble? Please contact us for any questions.</p>
-          <button className={` ${styles.btn}`}>Go to help center</button>
-        </div>
       </div>
     </div>
   );

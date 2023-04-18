@@ -12,13 +12,13 @@
 
 :root {
   --primaryColor: rgb(201, 213, 201);
-  --hoverColor: #bdf094;
-  --paleGreen: hsl(96, 75%, 89%);
+  --hoverColor: #495d48;
+  --paleGreen: hsl(133, 27%, 94%);
   --whiteColor: hsl(0, 0%, 100%);
-  --blackColor: hsl(0, 0%, 18%);
+  --blackColor: hsl(160, 3%, 19%);
   --textColor: hsl(240, 1%, 48%);
   --bgColor: hsl(220, 10%, 94%);
-  --grayText: rgb(190, 190, 190);
+  --grayText: rgb(142, 138, 138);
   --inputColor: hsl(330, 12%, 97%);
   --mainColorPage: #d8e6d6aa;
   --secondaryColorPage: #859b82aa;
