@@ -36,7 +36,7 @@ export default function Sidebar() {
 
   return (
     <div
-      className={` ${styles.sideBar} ${styles.grid} ${styles.bgSidebar} fixed-bottom  z-2 pt-5`}
+      className={` ${styles.sideBar} ${styles.grid} ${styles.bgSidebar} fixed-bottom  z-2`}
     >
       <div className={` ${styles.menuDiv}`}>
         <h3 className={`${styles.divTitle} pt-5`}>QUICK MENU</h3>

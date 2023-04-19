@@ -70,7 +70,7 @@ export default function CrudProducts() {
         <div className="d-flex justify-content-between align-items-baseline mb-5">
           <h2 className="mt-3 titleDashboard">Products</h2>
 
-          <Link to="/products/create" className=" secondaryButton">
+          <Link to="/products/create" className="secondaryButton">
             Add Products
           </Link>
         </div>

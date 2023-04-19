@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./AdminProfile.module.css";
-import { Form, Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -66,22 +66,15 @@ function AdminProfile() {
       <>
         {" "}
         <div
-          className={`d-flex align-items-center text-white ps-5 py-3 ${styles.bgColorAdmin} w-100`}
+          className={`d-flex align-items-center ps-5 py-3 w-100 container shadow mt-5`}
         >
           <div className="w-75 pt-5">
             {/* <h2 className="mt-3 titleDashboard">Profile</h2> */}
             <div>
-              <div className="row border-bottom mb-4 pb-4 align-items-center">
-                <div className="col-6">
+              <div className="row border-bottom mb-4 pb-4 align-items-center mx-1">
+                <div className="col-12">
                   {" "}
                   <h1>{admin.admin.firstname} </h1>
-                </div>
-                <div className="col-6">
-                  {" "}
-                  <img
-                    className={`rounded-circle object-fit-cover ms-2 position-relative ${styles.imgProfileAdmin}`}
-                    src={`${process.env.REACT_APP_IMAGES_URL}/${admin.admin.avatar}`}
-                  />
                 </div>
               </div>
 
@@ -210,12 +203,12 @@ function AdminProfile() {
                 </Form.Group>
 
                 <div className="d-flex justify-content-end">
-                  <Button
-                    className="rounded-0 secondaryButton mt-4 mb-4 pe-5 ps-5 me-3"
+                  <button
+                    className=" secondaryButton mt-4 mb-4 pe-5 ps-5 me-3"
                     type="submit"
                   >
                     Save changes
-                  </Button>
+                  </button>
                 </div>
               </Form>
             </div>
