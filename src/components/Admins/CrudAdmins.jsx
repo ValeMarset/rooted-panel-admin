@@ -67,7 +67,7 @@ export default function CrudAdmins() {
 
   return (
     <>
-      <div className="container shadow p-5 rounded my-5">
+      <div className="container p-md-5 p-2 rounded my-5 containerSections">
         <div className="d-flex justify-content-between align-items-baseline my-4">
           <h2 className="mt-3 titleDashboard">Administrator</h2>
 
@@ -81,12 +81,12 @@ export default function CrudAdmins() {
           <Table className={` ${styles.table} table-responsive`}>
             <thead>
               <tr>
-                <th>Id</th>
-                <th>Firstname</th>
+                <th className="d-none d-lg-table-cell">Id</th>
+                <th className="d-none d-lg-table-cell">Firstname</th>
                 <th>Lastname</th>
                 <th>Email</th>
-                <th>Address</th>
-                <th>Phone</th>
+                <th className="d-none d-lg-table-cell">Address</th>
+                <th className="d-none d-lg-table-cell">Phone</th>
                 <th>Avatar</th>
                 <th>Actions</th>
               </tr>
@@ -96,12 +96,20 @@ export default function CrudAdmins() {
                 {" "}
                 <tbody>
                   <tr>
-                    <td>{administrator.id}</td>
-                    <td>{administrator.firstname}</td>
+                    <td className="d-none d-lg-table-cell">
+                      {administrator.id}
+                    </td>
+                    <td className="d-none d-lg-table-cell">
+                      {administrator.firstname}
+                    </td>
                     <td>{administrator.lastname}</td>
                     <td>{administrator.email}</td>
-                    <td>{administrator.address}</td>
-                    <td>{administrator.phone}</td>
+                    <td className="d-none d-lg-table-cell">
+                      {administrator.address}
+                    </td>
+                    <td className="d-none d-lg-table-cell">
+                      {administrator.phone}
+                    </td>
                     <td>
                       <img
                         src={

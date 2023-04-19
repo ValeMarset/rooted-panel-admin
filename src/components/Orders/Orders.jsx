@@ -35,7 +35,7 @@ export default function Orders() {
 
   return (
     <>
-      <div className="container shadow p-5 rounded my-5">
+      <div className="container p-5 rounded my-5 containerSections">
         <div className="d-flex justify-content-between align-items-baseline my-4">
           <h2 className="mt-3 titleDashboard">Orders</h2>
         </div>
@@ -45,13 +45,13 @@ export default function Orders() {
           <Table className={` ${styles.table} lh-lg`}>
             <thead>
               <tr>
-                <th>Id</th>
+                <th className="d-none d-md-table-cell">Id</th>
 
                 <th>User</th>
                 <th>Email</th>
-                <th>Address</th>
-                <th>Phone</th>
-                <th>Status</th>
+                <th className="d-none d-xl-table-cell">Address</th>
+                <th className="d-none d-md-table-cell">Phone</th>
+                <th className="d-none d-md-table-cell">Status</th>
                 <th>Products</th>
               </tr>
             </thead>
@@ -60,12 +60,12 @@ export default function Orders() {
                 {" "}
                 <tbody>
                   <tr>
-                    <td>{order.id}</td>
+                    <td className="d-none d-md-table-cell">{order.id}</td>
                     <td>{order.userId}</td>
                     <td>{order.email}</td>
-                    <td>{order.address}</td>
-                    <td>{order.phone}</td>
-                    <td>{order.statusId}</td>
+                    <td className="d-none d-xl-table-cell">{order.address}</td>
+                    <td className="d-none d-md-table-cell">{order.phone}</td>
+                    <td className="d-none d-md-table-cell">{order.statusId}</td>
 
                     <td>
                       <Link to={`/orders/${order.id}`}>Expand</Link>

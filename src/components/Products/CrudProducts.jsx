@@ -66,7 +66,7 @@ export default function CrudProducts() {
 
   return (
     <>
-      <div className="container  p-md-5 p-2 rounded my-5 containerSections">
+      <div className="container p-md-5 p-2 rounded my-5 containerSections">
         <div className="d-flex justify-content-between align-items-baseline mb-5 w-100">
           <h2 className="mt-3  titleDashboard">Products</h2>
 

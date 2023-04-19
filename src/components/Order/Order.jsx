@@ -36,9 +36,9 @@ export default function Order() {
   return (
     order.products && (
       <>
-        <div className="container shadow p-5 rounded my-5">
+        <div className="container p-5 rounded my-5 containerSections">
           <div className="d-flex justify-content-between align-items-baseline mb-5">
-            <h2 className="my-3  titleDashboard">Order</h2>
+            <h2 className="mt-3  titleDashboard">Order</h2>
             <Link to="/orders">
               <button className="secondaryButton">Back to Orders</button>
             </Link>
@@ -49,9 +49,9 @@ export default function Order() {
             <Table className={` ${styles.table} `}>
               <thead>
                 <tr>
-                  <th>Product Id</th>
-                  <th>Product Name</th>
-                  <th>Product Price</th>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Price</th>
                   <th>Quantity</th>
                 </tr>
               </thead>

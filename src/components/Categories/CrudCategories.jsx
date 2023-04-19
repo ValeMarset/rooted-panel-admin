@@ -67,7 +67,7 @@ export default function CrudCategories() {
 
   return (
     <>
-      <div className="container shadow p-5 rounded my-5">
+      <div className="container p-md-5 p-2 rounded my-5 containerSections">
         <div className="d-flex justify-content-between align-items-baseline my-4">
           <h2 className="mt-3 titleDashboard">Categories</h2>
 
@@ -81,9 +81,9 @@ export default function CrudCategories() {
           <Table className={` ${styles.table} lh-lg table-responsive`}>
             <thead>
               <tr>
-                <th>Id</th>
+                <th className="d-none d-lg-table-cell">Id</th>
                 <th>Name</th>
-                <th>Description</th>
+                <th className="d-none d-lg-table-cell">Description</th>
                 <th>Img</th>
                 <th>Actions</th>
               </tr>
@@ -93,19 +93,19 @@ export default function CrudCategories() {
                 {" "}
                 <tbody>
                   <tr>
-                    <td>{category.id}</td>
+                    <td className="d-none d-lg-table-cell"> {category.id}</td>
                     <td>{category.name}</td>
-                    <td>
+                    <td className="d-none d-lg-table-cell">
                       {category.description.length > 70
                         ? category.description.slice(0, 70) + "..."
                         : category.description}
                     </td>
-                    <td className="">
+                    <td>
                       <img
                         src={`${process.env.REACT_APP_IMAGES_URL}/${category.img}`}
                         alt={category.name}
                         className=""
-                        style={{ width: "7rem " }}
+                        style={{ width: "5rem " }}
                       />
                     </td>
                     <td>
