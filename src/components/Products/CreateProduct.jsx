@@ -91,7 +91,7 @@ export default function CreateProduct() {
       <>
         <NavbarPanel />
 
-        <div className="row justify-content-center">
+        <div className="row justify-content-center g-0">
           <div className="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
             <section className="container shadow p-5 mt-5">
               <h2 className="pt-3 mb-5 titleDashboard">Create Products</h2>

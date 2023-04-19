@@ -161,3 +161,19 @@ body {
   width: 75%;
   margin: auto;
 }
+.containerSections {
+  width: 85%;
+  margin-left: 4rem;
+}
+@media screen and (min-width: 576px) {
+  .containerSections {
+    width: 85%;
+    margin-left: 10rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .containerSections {
+    width: 85%;
+    margin-left: 17rem;
+  }
+}

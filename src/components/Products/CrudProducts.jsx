@@ -66,9 +66,9 @@ export default function CrudProducts() {
 
   return (
     <>
-      <div className="container shadow p-5 rounded my-5">
-        <div className="d-flex justify-content-between align-items-baseline mb-5">
-          <h2 className="mt-3 titleDashboard">Products</h2>
+      <div className="container  p-md-5 p-2 rounded my-5 containerSections">
+        <div className="d-flex justify-content-between align-items-baseline mb-5 w-100">
+          <h2 className="mt-3  titleDashboard">Products</h2>
 
           <Link to="/products/create" className="secondaryButton">
             Add Products
@@ -77,16 +77,16 @@ export default function CrudProducts() {
         {loading ? (
           <Loader />
         ) : (
-          <Table className={` ${styles.table} lh-lg`}>
+          <Table className={` ${styles.table} lh-lg `}>
             <thead>
               <tr>
-                <th>Id</th>
+                <th className="d-none d-md-table-cell">Id</th>
                 <th>Name</th>
-                <th>Description</th>
-                <th>Summary</th>
-                <th>Price</th>
+                <th className="d-none d-lg-table-cell">Description</th>
+                <th className="d-none d-lg-table-cell">Summary</th>
+                <th className="d-none d-md-table-cell">Price</th>
                 <th>Img</th>
-                <th>Stock</th>
+                <th className="d-none d-md-table-cell">Stock</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -95,28 +95,30 @@ export default function CrudProducts() {
                 {" "}
                 <tbody>
                   <tr>
-                    <td>{product.id}</td>
+                    <td className="d-none d-md-table-cell">{product.id}</td>
                     <td>{product.name}</td>
-                    <td>
+                    <td className="d-none d-lg-table-cell">
                       {product.description.length > 70
                         ? product.description.slice(0, 70) + "..."
                         : product.description}
                     </td>
 
-                    <td>
+                    <td className="d-none d-lg-table-cell">
                       {product.summary.length > 70
                         ? product.summary.slice(0, 70) + "..."
                         : product.summary}
                     </td>
-                    <td>USD {product.price}</td>
+                    <td className="d-none d-md-table-cell">
+                      USD {product.price}
+                    </td>
                     <td>
                       <img
                         src={`${process.env.REACT_APP_IMAGES_URL}/${product.img}`}
                         alt={product.name}
-                        style={{ width: "7rem " }}
+                        style={{ width: "5rem " }}
                       />
                     </td>
-                    <td>{product.stock}</td>
+                    <td className="d-none d-md-table-cell">{product.stock}</td>
                     <td>
                       <div className="d-flex">
                         <Link
@@ -140,18 +142,18 @@ export default function CrudProducts() {
                             undone.
                           </Modal.Body>
                           <Modal.Footer>
-                            <Button
-                              variant="secondary"
+                            <button
+                              className="primaryButton px-3"
                               onClick={() => setShow(false)}
                             >
                               Take me back
-                            </Button>
-                            <Button
-                              variant="primary"
+                            </button>
+                            <button
+                              className="secondaryButton px-3"
                               onClick={() => handleDeleteProduct()}
                             >
                               Yes
-                            </Button>
+                            </button>
                           </Modal.Footer>
                         </Modal>
                       </div>
