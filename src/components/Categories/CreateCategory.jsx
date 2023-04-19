@@ -6,6 +6,7 @@ import Card from "react-bootstrap/Card";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import NavbarPanel from "../home/NavbarPanel";
 
 export default function CreateCategory() {
   const admin = useSelector((state) => state.admin);
@@ -53,70 +54,65 @@ export default function CreateCategory() {
 
   return (
     <>
-      <div
-        className="d-flex justify-content-end mt-5  "
-        style={{ width: "32rem" }}
-      >
-        <Link to="/categories">
-          <button className="secondaryButton rounded-0">
-            Back to Categories
-          </button>
-        </Link>
+      <NavbarPanel />
+      <div className="row justify-content-center g-0">
+        <div className="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+          <section className="container shadow p-5 mt-5 ">
+            <h2 className="pt-3 mb-5 titleDashboard">Create Category</h2>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group className="mb-3">
+                <Form.Label>Name</Form.Label>
+                <Form.Control
+                  name="nameCategory"
+                  id="nameCategory"
+                  type="name"
+                  placeholder="Name of Category"
+                  required
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
+                  className="rounded-0"
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+                <Form.Label>Description</Form.Label>
+                <textarea
+                  name="description"
+                  id="description"
+                  cols="30"
+                  rows="5"
+                  className="form-control rounded-0"
+                  required
+                  onChange={(e) => setDescription(e.target.value)}
+                  value={description}
+                ></textarea>
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+                <Form.Label>Image</Form.Label>
+                <Form.Control
+                  type="file"
+                  placeholder="Image"
+                  onChange={(e) => setImg(e.target.files[0])}
+                  className="rounded-0"
+                />
+              </Form.Group>
+
+              <div className=" mt-3 d-flex justify-content-end">
+                <button
+                  className="secondaryButton me-3 px-3 pt-2"
+                  type="submit"
+                >
+                  Submit
+                </button>
+                <Link to="/categories" className="primaryButton px-3 pt-2">
+                  Cancel
+                </Link>
+              </div>
+            </Form>
+          </section>
+        </div>{" "}
       </div>
-      <section className="d-flex justify-content-center align-items-center mt-4 ">
-        <Card style={{ width: "30rem" }} className="p-3 rounded-0">
-          <Card.Body>
-            <h2>Create Category</h2>
-            <Card.Text>
-              <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3">
-                  <Form.Label>Name</Form.Label>
-                  <Form.Control
-                    name="nameCategory"
-                    id="nameCategory"
-                    type="name"
-                    placeholder="Name of Category"
-                    required
-                    onChange={(e) => setName(e.target.value)}
-                    value={name}
-                    className="rounded-0"
-                  />
-                </Form.Group>
-
-                <Form.Group className="mb-3">
-                  <Form.Label>Description</Form.Label>
-                  <textarea
-                    name="description"
-                    id="description"
-                    cols="30"
-                    rows="5"
-                    className="form-control rounded-0"
-                    required
-                    onChange={(e) => setDescription(e.target.value)}
-                    value={description}
-                  ></textarea>
-                </Form.Group>
-
-                <Form.Group className="mb-3">
-                  <Form.Label>Image</Form.Label>
-                  <Form.Control
-                    type="file"
-                    placeholder="Image"
-                    onChange={(e) => setImg(e.target.files[0])}
-                    className="rounded-0"
-                  />
-                </Form.Group>
-
-                <div className=" mt-3 d-grid gap-2">
-                  <Button className="secondaryButton rounded-0" type="submit">
-                    Submit
-                  </Button>
-                </div>
-              </Form>
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </section>
     </>
   );
 }

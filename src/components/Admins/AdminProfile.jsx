@@ -66,7 +66,7 @@ function AdminProfile() {
       <>
         {" "}
         <div
-          className={`d-flex align-items-center ps-5 py-3 w-100 container shadow mt-5`}
+          className={`d-flex align-items-center ps-5 py-3 w-100 container containerSections  mt-5`}
         >
           <div className="w-75 pt-5">
             {/* <h2 className="mt-3 titleDashboard">Profile</h2> */}

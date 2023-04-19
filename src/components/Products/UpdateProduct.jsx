@@ -97,11 +97,6 @@ export default function UpdateProduct() {
   return (
     categories && (
       <>
-        {/* <Link to="/products">
-            <button className="secondaryButton rounded-0">
-              Back to Products
-            </button>
-          </Link> */}
         <NavbarPanel />
 
         <div className="row justify-content-center g-0">

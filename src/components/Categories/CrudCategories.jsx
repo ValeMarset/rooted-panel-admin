@@ -127,22 +127,22 @@ export default function CrudCategories() {
                             <Modal.Title>Are you sure?</Modal.Title>
                           </Modal.Header>
                           <Modal.Body>
-                            Removing this category is permanent and cannot be
+                            Removing this product is permanent and cannot be
                             undone.
                           </Modal.Body>
                           <Modal.Footer>
-                            <Button
-                              variant="secondary"
+                            <button
+                              className="primaryButton px-3"
                               onClick={() => setShow(false)}
                             >
                               Take me back
-                            </Button>
-                            <Button
-                              variant="primary"
+                            </button>
+                            <button
+                              className="secondaryButton px-3"
                               onClick={() => handleDeleteCategory()}
                             >
                               Yes
-                            </Button>
+                            </button>
                           </Modal.Footer>
                         </Modal>
                       </div>
