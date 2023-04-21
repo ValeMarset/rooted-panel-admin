@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Table from "react-bootstrap/Table";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./CrudProducts.module.css";
 import toast from "react-hot-toast";
 import Button from "react-bootstrap/Button";
@@ -45,6 +45,10 @@ export default function CrudProducts() {
         url: `${process.env.REACT_APP_BACK_URL}/products`,
         data: product,
       });
+      setTimeout(
+        () => toast.success("Product has been successfully removed"),
+        1500
+      );
     } catch (error) {
       toast.error("Something went wrong");
     }
@@ -63,14 +67,13 @@ export default function CrudProducts() {
     deleteProduct(productDelete);
     setShow(false);
   };
-
   return (
     <>
       <div className="container p-md-5 p-2 rounded my-5 containerSections">
         <div className="d-flex justify-content-between align-items-baseline mb-5 w-100">
           <h2 className="mt-3  titleDashboard">Products</h2>
 
-          <Link to="/products/create" className="secondaryButton">
+          <Link to="/create" className="secondaryButton">
             Add Products
           </Link>
         </div>
@@ -84,6 +87,8 @@ export default function CrudProducts() {
                 <th>Name</th>
                 <th className="d-none d-lg-table-cell">Description</th>
                 <th className="d-none d-lg-table-cell">Summary</th>
+                <th className="d-none d-lg-table-cell">Category</th>
+                <th className="d-none d-lg-table-cell">Upkeep</th>
                 <th className="d-none d-md-table-cell">Price</th>
                 <th>Img</th>
                 <th className="d-none d-md-table-cell">Stock</th>
@@ -92,7 +97,6 @@ export default function CrudProducts() {
             </thead>
             {products.map((product) => (
               <>
-                {" "}
                 <tbody>
                   <tr>
                     <td className="d-none d-md-table-cell">{product.id}</td>
@@ -108,6 +112,12 @@ export default function CrudProducts() {
                         ? product.summary.slice(0, 70) + "..."
                         : product.summary}
                     </td>
+                    <td className="d-none d-lg-table-cell">
+                      {product.category.name === null
+                        ? " "
+                        : product.category.name}
+                    </td>
+                    <td className="d-none d-lg-table-cell">{product.upkeep}</td>
                     <td className="d-none d-md-table-cell">
                       USD {product.price}
                     </td>
@@ -121,10 +131,7 @@ export default function CrudProducts() {
                     <td className="d-none d-md-table-cell">{product.stock}</td>
                     <td>
                       <div className="d-flex">
-                        <Link
-                          to={`/products/update/${product.id}`}
-                          className="me-4"
-                        >
+                        <Link to={`/update/${product.id}`} className="me-4">
                           <i
                             className={`${styles.colorText} bi bi-pencil h5`}
                           ></i>{" "}

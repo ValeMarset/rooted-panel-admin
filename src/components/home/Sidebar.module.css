@@ -23,7 +23,7 @@
 
 .sideBar {
   background: var(--paleGreen);
-  width: 13%;
+  width: 15%;
   height: 100vh;
   gap: 3rem;
   overflow: auto;

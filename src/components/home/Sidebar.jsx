@@ -44,10 +44,7 @@ export default function Sidebar() {
           className={` ${styles.menuLists} ${styles.grid} list-unstyled ps-md-4`}
         >
           <li className={`${styles.listItem}`}>
-            <Link
-              to="/products"
-              className={` ${styles.menuLink} ${styles.flex}`}
-            >
+            <Link to="/" className={` ${styles.menuLink} ${styles.flex}`}>
               <TbPlant className={` ${styles.icon}`} />
               <span className={`${styles.smallText}`}>Products</span>
             </Link>

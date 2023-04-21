@@ -53,7 +53,7 @@ export default function CreateProduct() {
       setStock("");
 
       toast.success("Product created successfully!");
-      navigate("/products/create");
+      navigate("/");
     } catch (error) {
       toast.error("Something went wrong");
     }
@@ -215,7 +215,7 @@ export default function CreateProduct() {
                   >
                     Submit
                   </button>
-                  <Link to="/products" className="primaryButton px-3 pt-2">
+                  <Link to="/" className="primaryButton px-3 pt-2">
                     Cancel
                   </Link>
                 </div>

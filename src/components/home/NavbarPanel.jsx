@@ -29,11 +29,6 @@ function NavbarPanel() {
           </h2>
         </div>
       </Link>
-      {/* <Navbar.Brand href="#home" className="ms-4">
-        <div className="title">
-          <p>Hello {admin.admin.firstname}, welcome back!</p>
-        </div>{" "}
-      </Navbar.Brand> */}
 
       <div className="container d-flex justify-content-end">
         <div className="d-flex align-items-center">

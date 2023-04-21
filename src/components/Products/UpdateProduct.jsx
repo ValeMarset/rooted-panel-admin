@@ -65,7 +65,7 @@ export default function UpdateProduct() {
       });
 
       toast.success("Product modifyed successfully!");
-      navigate("/products");
+      navigate("/");
     } catch (error) {
       toast.error("Something went wrong");
     }
@@ -225,7 +225,7 @@ export default function UpdateProduct() {
                   >
                     Update
                   </button>
-                  <Link to="/products" className="primaryButton px-3 pt-2">
+                  <Link to="/" className="primaryButton px-3 pt-2">
                     Cancel
                   </Link>
                 </div>

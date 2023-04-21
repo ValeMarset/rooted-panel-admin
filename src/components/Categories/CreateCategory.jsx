@@ -37,7 +37,7 @@ export default function CreateCategory() {
       setImg(undefined);
 
       toast.success("Category created successfully!");
-      navigate("/categories/create");
+      navigate("/categories");
     } catch (error) {
       toast.error("Something went wrong");
     }

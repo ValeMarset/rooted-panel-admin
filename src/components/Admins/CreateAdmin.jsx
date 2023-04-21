@@ -40,7 +40,7 @@ export default function CreateAdmin() {
       });
 
       toast.success("Product created successfully!");
-      navigate("/admins");
+      navigate("/");
     } catch (error) {
       toast.error("Something went wrong");
     }
@@ -58,7 +58,7 @@ export default function CreateAdmin() {
       <div className="row justify-content-center g-0">
         <div className="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
           <section className="container shadow p-5 mt-5">
-            <h2 className="pt-3 mb-5 titleDashboard">Create Product</h2>
+            <h2 className="pt-3 mb-5 titleDashboard">Register Administrator</h2>
 
             <Form className="" onSubmit={(e) => handleSubmit(e)}>
               <div className="d-flex">

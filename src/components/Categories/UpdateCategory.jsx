@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import Card from "react-bootstrap/Card";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -19,17 +17,14 @@ export default function UpdateCategory() {
 
   useEffect(() => {
     const getCategory = async () => {
-      const response = await axios({
-        headers: {
-          Authorization: `Bearer ${admin.token}`,
-        },
-        method: "get",
-        url: `${process.env.REACT_APP_BACK_URL}/categories/${id}`,
-      });
+      const response = await axios.get(
+        `${process.env.REACT_APP_BACK_URL}/categories/${id}`
+      );
+      const { data } = response;
 
-      setName(response.data.name);
-      setDescription(response.data.description);
-      setImg(response.data.img);
+      setName(data.name);
+      setDescription(data.description);
+      setImg(data.img);
     };
     getCategory();
   }, []);

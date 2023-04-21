@@ -27,19 +27,19 @@ export default function App() {
 
         <Route
           path="/"
-          element={admin ? <HomePage /> : <Navigate to="/login" replace />}
-        />
-
-        <Route
-          path="/products"
           element={admin ? <ProductsPage /> : <Navigate to="/login" replace />}
         />
+
+        {/* <Route
+          path="/products"
+          element={admin ? <ProductsPage /> : <Navigate to="/login" replace />}
+        /> */}
         <Route
-          path="/products/create"
+          path="/create"
           element={admin ? <CreateProduct /> : <Navigate to="/login" replace />}
         />
         <Route
-          path="/products/update/:id"
+          path="/update/:id"
           element={admin ? <UpdateProduct /> : <Navigate to="/login" replace />}
         />
 

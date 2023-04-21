@@ -15,19 +15,16 @@ export default function CrudCategories() {
   const [categoryDelete, setCategoryDelete] = useState("");
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const getCategories = async () => {
       try {
-        const response = await axios({
-          headers: {
-            Authorization: `Bearer ${admin.token}`,
-          },
-          method: "get",
-          url: `${process.env.REACT_APP_BACK_URL}/categories`,
-        });
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACK_URL}/categories`
+        );
         setCategories(response.data);
         setLoading(false);
+
+        console.log(response.data);
       } catch (error) {
         toast.error("Something went wrong");
         setLoading(false);
@@ -46,6 +43,10 @@ export default function CrudCategories() {
         url: `${process.env.REACT_APP_BACK_URL}/categories`,
         data: category,
       });
+      setTimeout(
+        () => toast.success("Category has been successfully removed"),
+        1500
+      );
     } catch (error) {
       toast.error("Something went wrong");
     }

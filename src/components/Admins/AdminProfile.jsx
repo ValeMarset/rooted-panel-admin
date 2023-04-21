@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { update } from "../../redux/adminReducer";
+import Loader from "../Loader";
 
 function AdminProfile() {
   const admin = useSelector((state) => state.admin);
@@ -20,6 +20,7 @@ function AdminProfile() {
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [image, setImage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setFirstname(admin.admin.firstname);
@@ -51,9 +52,12 @@ function AdminProfile() {
       });
 
       handleSave(updatedAdmin.data);
+      setLoading(true);
+      setTimeout(() => setLoading(false), 1500);
       toast.success("Your changes are successfully saveed");
       navigate("/");
     } catch (error) {
+      setTimeout(() => setLoading(false), 1500);
       toast.error("something went wrong");
     }
   };
@@ -66,12 +70,11 @@ function AdminProfile() {
       <>
         {" "}
         <div
-          className={`d-flex align-items-center ps-5 py-3 w-100 container containerSections  mt-5`}
+          className={`d-flex align-items-center justify-content-center ps-5 py-3 w-100 container  mt-5`}
         >
           <div className="w-75 pt-5">
-            {/* <h2 className="mt-3 titleDashboard">Profile</h2> */}
             <div>
-              <div className="row border-bottom mb-4 pb-4 align-items-center mx-1">
+              <div className="row border-bottom mb-4 pb-4 align-items-center  mx-1">
                 <div className="col-12">
                   {" "}
                   <h1>{admin.admin.firstname} </h1>
@@ -82,9 +85,11 @@ function AdminProfile() {
                 <Form.Group className="border-bottom mb-4 pb-4 ms-3 me-3 d-flex">
                   <div className="row w-100 g-0">
                     <div className="col-6">
-                      <Form.Label className="me-5">First Name</Form.Label>
+                      <Form.Label className="mb-3 mb-lg-0">
+                        First Name
+                      </Form.Label>
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-lg-6">
                       <Form.Control
                         type="text"
                         placeholder="First Name"
@@ -102,9 +107,11 @@ function AdminProfile() {
                 <Form.Group className="border-bottom mb-4 pb-4 ms-3 me-3">
                   <div className="row w-100 g-0">
                     <div className="col-6">
-                      <Form.Label>Last Name</Form.Label>
+                      <Form.Label className="mb-3 mb-lg-0">
+                        Last Name
+                      </Form.Label>
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-lg-6">
                       {" "}
                       <Form.Control
                         type="text"
@@ -124,9 +131,9 @@ function AdminProfile() {
                   <div className="row g-0">
                     <div className="col-6">
                       {" "}
-                      <Form.Label>Address</Form.Label>
+                      <Form.Label className="mb-3 mb-lg-0">Address</Form.Label>
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-lg-6">
                       {" "}
                       <Form.Control
                         type="text"
@@ -145,9 +152,9 @@ function AdminProfile() {
                 <Form.Group className="border-bottom mb-4 pb-4 ms-3 me-3">
                   <div className="row g-0">
                     <div className="col-6">
-                      <Form.Label>Phone</Form.Label>
+                      <Form.Label className="mb-3 mb-lg-0">Phone</Form.Label>
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-lg-6">
                       <Form.Control
                         type="text"
                         placeholder="Your Phone"
@@ -165,9 +172,9 @@ function AdminProfile() {
                   <div className="row g-0">
                     <div className="col-6">
                       {" "}
-                      <Form.Label>Email</Form.Label>
+                      <Form.Label className="mb-3 mb-lg-0">Email</Form.Label>
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-lg-6">
                       {" "}
                       <Form.Control
                         type="email"
@@ -185,12 +192,17 @@ function AdminProfile() {
 
                 <Form.Group className="border-bottom mb-4 pb-4 ms-3 me-3">
                   <div className="row g-0">
-                    <div className="col-6">
+                    <div className="col-6 ">
                       {" "}
-                      <Form.Label>Image</Form.Label>
+                      <Form.Label className="mb-3 mb-lg-0">Image</Form.Label>
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-lg-6 d-flex align-items-center">
                       {" "}
+                      <img
+                        className={`top rounded-circle shadow-sm  ${styles.imageSize} me-3`}
+                        src={`${process.env.REACT_APP_IMAGES_URL}/${admin.admin.avatar}`}
+                        alt={admin.admin.firstname}
+                      />
                       <Form.Control
                         type="file"
                         name="image"
@@ -203,6 +215,7 @@ function AdminProfile() {
                 </Form.Group>
 
                 <div className="d-flex justify-content-end">
+                  {loading && <Loader />}
                   <button
                     className=" secondaryButton mt-4 mb-4 pe-5 ps-5 me-3"
                     type="submit"
