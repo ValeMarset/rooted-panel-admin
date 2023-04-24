@@ -19,7 +19,7 @@ function AdminProfile() {
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
-  const [image, setImage] = useState("");
+  const [avatar, setAvatar] = useState("");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function AdminProfile() {
     setEmail(admin.admin.email);
     setAddress(admin.admin.address);
     setPhone(admin.admin.phone);
-    setImage(admin.admin.image);
+    setAvatar(admin.admin.avatar);
   }, [admin]);
 
   const handleUpdate = async (e) => {
@@ -39,23 +39,24 @@ function AdminProfile() {
     formData.append("email", email);
     formData.append("address", address);
     formData.append("phone", phone);
-    formData.append("image", image);
+    formData.append("avatar", avatar);
 
     try {
       const updatedAdmin = await axios({
-        url: `${process.env.REACT_APP_BACK_URL}/admin/${admin.admin.id}`,
-        method: "PATCH",
-        data: formData,
         headers: {
+          Authorization: `Bearer ${admin.token}`,
           "Content-Type": "multipart/form-data",
         },
+        url: `${process.env.REACT_APP_BACK_URL}/admins/${admin.admin.id}`,
+        method: "PATCH",
+        data: formData,
       });
 
       handleSave(updatedAdmin.data);
       setLoading(true);
       setTimeout(() => setLoading(false), 1500);
       toast.success("Your changes are successfully saveed");
-      navigate("/");
+      navigate("/admins");
     } catch (error) {
       setTimeout(() => setLoading(false), 1500);
       toast.error("something went wrong");
@@ -68,7 +69,7 @@ function AdminProfile() {
   return (
     admin && (
       <>
-        {" "}
+        {console.log()}
         <div
           className={`d-flex align-items-center justify-content-center ps-5 py-3 w-100 container  mt-5`}
         >
@@ -207,7 +208,7 @@ function AdminProfile() {
                         type="file"
                         name="image"
                         id="image"
-                        onChange={(e) => setImage(e.target.files[0])}
+                        onChange={(e) => setAvatar(e.target.files[0])}
                         className="rounded-0"
                       />
                     </div>
